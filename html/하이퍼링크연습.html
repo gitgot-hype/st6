@@ -7,6 +7,18 @@
 </head>
 <body>
   <h1>하이퍼링크</h1>
+<nav>
+    <ul>
+      <!--  ㅣㅑ*6>ㅁ>{메뉴$} -->
+      <li><a href="#exam1">메뉴1</a></li>
+      <li><a href="#exam2">메뉴1</a></li>
+      <li><a href="#exam3">메뉴1</a></li>
+      <li><a href="#exam4">메뉴1</a></li>
+      <li><a href="#exam5">메뉴1</a></li>
+      <li><a href="#exam6">메뉴1</a></li>
+     </ul>
+  </nav>
+
   <hr>
   <h2>블록레벨과 인라인 레벨</h2>
   <p>네이버</p>
@@ -24,7 +36,7 @@
     <li><pre></pre></li>
     <li><pre>href = "url"</pre></li>
   </ul>
-  <h3>하이퍼링크 연습</h3>
+  <h3 id="exam1">하이퍼링크 연습</h3>
   <!-- 
   url 형식ㅇ
   프로토콜://도메인/경로/퐈일명.확정자
@@ -40,16 +52,72 @@
    -->
   <a href="https://www.naver.com" title="마우스 후버시 툴팁" target="-blank">네이버2</a>,
   <hr>
-  <h3>이미지에 하아퍼링크</h3>
+  <h3 id="exam3">이미지에 하아퍼링크</h3>
+  <!-- 
+  <a href ="">
+  <img src= "" alt="">
+  </a>
+  -->
   <a href="https://www.google.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/500px-Google_2015_logo.svg.png" alt=""></a>
   <hr>
-  <h3>전화번호에 연결</h3>
+  <h3 id="exam4">전화번호에 연결</h3>
   <p>tel: 프로토콜은 모바일에서만 사용 가능</p>
   <a href="tel:010-123-4567">010-123-4567</a>
   
-  <h3>인터넷상의 파일이 아닌 동일 컴(서버)의 파일 연결</h3>
+  <h3 id="exam2">인터넷상의 파일이 아닌 동일 컴(서버)의 파일 연결</h3>
   <a href="상대경로연습.html">상대경로연습</a>
   <a href="../url연습/상대경로연습2.html">상대경로연습2</a>
+  <h3 id="exam5"> 비 html파일 링크 걸기</h3>
+  <a href="asset/logo.png">로고보기</a>
+  <a href="./image-multimedia.zip">자료다운로드</a>
+  <h3 id="exam6">문서내 이동</h3>
+  <ol>
+    <li>문서내 이동을 원하는 곳에 북마크를 만듭니다.
+      <ol>
+        <li>북마크가 될 태그에 아이디를 지정</li>
+        <li>html id를 선언 id="아이디명"
+        <p>html, css 아이디를  호출 #아이디명</p></li>
+      </ol><!--//북마크 지정-->
+    </li>
+    <li>문서내에 북마크로 이동할 수 있는 메누(인텍스 )링크
+      <ul>
+        <li>a태그의 href="url"</li>
+        <li>a태그의 href="#아이디명"</li>
+      </ul>
+    </li>
+  </ol><!-- //북마크 설명 마감 -->
+
+  <h3>하단메뉴</h3>
+  <nav>
+    <ul>
+      <!--  ㅣㅑ*6>ㅁ>{메뉴$} -->
+      <li><a href="#exam1">메뉴1</a></li>
+      <li><a href="#exam2">메뉴1</a></li>
+      <li><a href="#exam3">메뉴1</a></li>
+      <li><a href="#exam4">메뉴1</a></li>
+      <li><a href="#exam5">메뉴1</a></li>
+      <li><a href="#exam6">메뉴1</a></li>
+     </ul>
+  </nav>
+
+  <div class=""goto">
+<!-- 
+북마크 하는 태그 id="아이디" 호출 <a href="아이디">내용</a>   
+-->
+    <a href="#">TOP</a>
+    <a href="#exam6">BOTTOM</a>
+  </div>
+  <style>
+    .goto{
+      position: fixed;
+      bottom: 50px;
+      right: 20px;
+    }
+    .goto>a{
+      display: block;
+    }
+
+  </style>
 
 </body>
 </html>
