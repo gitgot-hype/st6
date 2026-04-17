@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1>폼태그</h1>
-  <form action=""></form>
+  <form action="">
     <fieldset>
       <legend>폼의 이름표</legend>
       <p>
@@ -28,5 +28,88 @@
         </p>
       </p>
     </fieldset>
+    <fieldset>
+      <legend>선택상자</legend>
+      <div>
+        <!-- input을 label로 감싸면 id/ for 연결 필요없음. -->
+        <label for="">빨강 
+        <input type="checkbox" name="color"  id="" value="1"></label>
+        <label for="">파랑
+        <input type="checkbox" name="color"  id="" value="2"></label>
+        <label for="">노랑
+        <input type="checkbox" name="color"  id="" value="3"></label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>선택상자/color</legend>
+      <div>
+        <!-- input의 id와 label의 for는 동일해야 함 / name은 전체 동일-->
+        <input type="checkbox" name="color"  id="color1" value="1">
+        <label for="color1">빨강</label>
+        <input type="checkbox" name="color"  id="color2" value="2">
+        <label for="color2">파랑</label>
+        <input type="checkbox" name="color"  id="color3" value="3">
+        <label for="color3">노랑</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>라디오버튼</legend>
+      <!-- 하나만 선택되는 라이오버튼의 특성을 나타내기 위해선 꼭 name의 값을 설정해줘야 함. 동일한 name으로 -->
+      <label for="test1">빨강</label>
+      <input type="radio" name="test" id="test1">
+      <label for="test2">파랑</label>
+      <input type="radio" name="test" id="test2">
+      <label for="test3">노랑</label>
+      <input type="radio" name="test" id="test3">
+    </fieldset>
+    <div>
+      <input type="reset" >
+      <input type="submit">
+      <input type="reset" value="취소">
+      <input type="submit" value="확인">
+      <input type="button" value="주소찾기">
+      <input type="file" value="찾아보기">
+    </div>
+    <div>
+      <button>제목</button>
+      <button type="submit">제목</button>
+      <button type="reset">취소</button>
+      <button type="button">확인</button>
+      <button type="button"><img src="asset/logo.png" alt="" width="50"></button>
+    </div>
+    <style>
+      button, [type="submit"] {
+        background-color: brown;
+      }
+    </style>
+    <div>
+      <!-- 실제 액션은 점프는, js로 해야함. value 값으로는 안됨 -->
+      <select name="" id="">
+        <option value="">패밀리사이트</option>
+        <option value="">네이버</option>
+        <option value="">구글</option>
+        <option value="">다음</option>
+      </select>
+      <select name="" id="" multiple>
+        <option value="">패밀리사이트</option>
+        <option value="">네이버</option>
+        <option value="">구글</option>
+        <option value="">다음</option>
+      </select>
+    </div>
+    <div>
+      <textarea name="" id=""></textarea>
+      <textarea name="" id="" disabled ></textarea>
+      <textarea name="" id="" readonly>가나다라마사바</textarea>
+      <!-- readonly는 사용안하는게 낫다. 사용자가 시스템에러라고 오해 가능성 있음. -->
+    </div>
+
+  </form>
+
+  <style>
+    div, fieldset{
+      margin-bottom: 50px;
+    }
+  </style>
 </body>
 </html>
