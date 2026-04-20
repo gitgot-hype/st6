@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자 연습</title>
+  <style>
+    body{
+      /* 서체 지정
+      font-family:글꼴이름1, 글꼴이름2....., 브라우저사용 서체; 
+      font-family: 영어서체, 한글서체,....., sans-serif
+      font-family: 영어서체, 한글서체,....., sans 
+      2byet 서체 사용시 ""안에 넣는다
+      */
+     font-family: "맑은 고딕", serif;
+     /* 브라우저 설정 기본 크기 font-size: 1em; */
+     /* 브라우저 설정 기본 크기 font-size: 16px; */
+     /* font-size: 14px; */
+     font-size: 0.875em; /* 14px */
+     /* 일반적으로 바디가 아니라 html에 지정해서 rem으로 설정한다.*/
+    }
+    .box p{
+      /* font-size: 0.875em; 부모의 글자크기 14px의 0.875*/
+      /* font-size: 14px 부모의 크기랑 상관없이 무조건 14px */
+      font-size:0.875rem;
+      /* 87.5%*/
+    }
+    /* reset */
+    h1, h2, h3, h4, h5, h6{
+     font-size: 1rem; /* root (html 요소)의 글자크기를 기준*/
+     font-weight: normal;
+    }
+    
+    /* 
+    p{} 문서내의 모든 태그를 지정
+    .title   모든 클래스명이 title을 지정
+    section .title{}   __ 후손타이틀클래스
+    section> .title{}   > 직게자식 타이틀 클래스
+     */
+    section > .title {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color:#8866ff;
+      font-family: Impact, "돋움체", sans-serif;
+    }
+    /* font-style */
+    .italic{
+      font-style: italic;
+      color:royalblue;
+      font-weight: bold;
+    }
+
+    /* 소문자 크기의 대문자 표시 */
+    section>.title{
+      font-variant: small-caps;
+    }
+    /* 블록레벨의 요소내의 문단의 줄간격, 요소와 요소사이의 간격은 여백으로 처리, */
+    #section2{
+      line-height:1.3;
+    }
+    body{
+     /* font-size: 0.875em; 
+     font-style: normal; 
+     font-weight: normal;
+     font-family: "궁서체", serif;
+     line-height: 1.5; 
+     순서는 : font-style font-variant font-weight font-size/line-hight font-famly;*/
+     /* font:normal normal 0.875em/1.5  "궁서체",serif; */
+     font:  0.875em "궁서체",serif;
+    }
+  </style>
+</head>
+<!-- <body> -->
+   <div id="wrap">      
+     <!-- header+div.container+footer -->
+      <header></header>
+      <div class="container">
+        <!-- section#section$*3>p.title+div.box>h2+p*2>lorem10 -->
+         <!-- section#section1 -->
+         <section id="section1">
+          <div class="title">section1</div>
+          <div class="box">
+            <!-- h2+p*2>lorem10 -->
+            <h2 class="title">신상품품</h2>
+            <p>Lorem <span class="italic">ipsum</span> dolor sit amet consectetur adipisicing elit. Repellendus, quis.</p>
+            <p>Voluptates laudantium quam esse quis placeat corporis ab officiis eos?</p>
+          </div>
+         </section>
+         <section id="section2">
+          <p class="title">section2</p>
+          <div class="box">
+            <!-- h2+p*2>lorem10 -->
+            <h2 class="title">md 추천</h2>
+            <p>Lorem ipsum dolor sit <span class="italic">amet</span> consectetur adipisicing elit. Repellendus, quis.</p>
+            <p>Voluptates laudantium quam esse quis placeat corporis ab officiis eos?</p>
+          </div>
+          <p>section2 마지막 자식</p>
+         </section>
+         <section id="section3">
+          <p class="title">section3</p>
+          <div class="box">
+            <!-- h2+p*2>lorem10 -->
+            <h2 class="title">베스트 상품</h2>
+            <p>Lorem <span class="italic">ipsum dolor</span> sit amet consectetur adipisicing elit. Repellendus, quis.</p>
+            <p>Voluptates laudantium quam esse quis placeat corporis ab officiis eos?</p>
+          </div>
+         </section>
+      </div>
+      <!-- //.container -->
+      <footer></footer>
+  </div>
+  <!-- //#wrap -->
+</body>
+<!-- </html> -->
