@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자 연습</title>
+  <style>
+    /* 코멘트 */
+    /* 태그선택자 {속성:값; 속성:값;} */
+    h2{
+      /* 문서내 모든 h2을 선태해서 */
+      color:#86f
+    }
+    /* 클래스 선택
+    .클래스명 */
+    .title{
+       /* 문서내 모든  .title을 선태해서 */
+      color:#f68
+    }
+    div.title{
+      /* 믄서내 div태그이면서 클래스가  title인 모든 요소 */
+      color:#8f6
+    }
+    /* 아이디 선택자  #아이디{} */
+    #section1{
+      border:1px solid #000000
+    }
+    /* 후손 선택자 _은 공백문자의 의미 조상_후손{} */
+    .box>p{
+      /* 클랙스 box의 후손중 p태그를 선택해서 */
+      color:red;
+    }
+    /* 자식선택자는 +
+     부모 > 자식{} */
+     /* section > p{} */
+     /* section > .title */
+     section > .title{
+      color:#cc8
+     }
+  </style>
+</head>
+<body>
+
+  <!-- emmet에서 div#wrap, #wrap 동일하게 작업됨
+   태그#아이디명
+   태크.클랫명
+   ex) span.box
+   태그  - elememt(요소) ex) p, div title 등 요소로만 확인함. -->
+  <!-- 문서내의 id는 유일해야한다. 동일명의 아이디는 존재하면 안된다. -->
+   <div id="wrap">      
+     <!-- header+div.container+footer -->
+      <header></header>
+      <div class="container">
+        <!-- section#section$*3>p.title+div.box>h2+p*2>lorem10 -->
+         <!-- section#section1 -->
+         <section id="section1">
+          <div class="title">section1</div>
+          <div class="box">
+            <!-- h2+p*2>lorem10 -->
+            <h2>신상품</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, quis.</p>
+            <p>Voluptates laudantium quam esse quis placeat corporis ab officiis eos?</p>
+          </div>
+         </section>
+         <section id="section2">
+          <p class="title">section2</p>
+          <div class="box">
+            <!-- h2+p*2>lorem10 -->
+            <h2>신상품</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, quis.</p>
+            <p>Voluptates laudantium quam esse quis placeat corporis ab officiis eos?</p>
+          </div>
+          <p>section2 마지막 자식</p>
+         </section>
+         <section id="section3">
+          <p class="title">section3</p>
+          <div class="box">
+            <!-- h2+p*2>lorem10 -->
+            <h2>신상품</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, quis.</p>
+            <p>Voluptates laudantium quam esse quis placeat corporis ab officiis eos?</p>
+          </div>
+         </section>
+      </div>
+      <!-- //.container -->
+      <footer></footer>
+  </div>
+  <!-- //#wrap -->
+</body>
+<!-- </html> -->

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자 우선순위</title>
+  <style>
+    /* p{
+      color:#f00;
+    } */
+     /* 우선순위는 동일요소에 동일속성을 다른값으로 지정하면 조상의 값을 상속받아서 적용될수 있다.
+     동일요소의 동일속상의 다른값으로 지정된다면 뒤에 코딩된 값 기본적으로 우선적용 but...
+     조상 동일속성, 본인 동일 속성 지정하면 본인에게 지정한 속성 작용 
+     우선순위값이 높은 선택자가 우선
+      태그1, 클래스 10, 아이디 100, 인라인 1000 */
+    .box p{color:dodgerblue !important} /*10+1*/
+    .title{color:#0f0 } /*10*/
+    P{color:#0ff} /*1*/
+    div{color:#f00} /*1*/
+    div{color:#00f} /*1*/
+    p{color:#000} /*1*/
+
+    /* 동일한 요소에다 다른 명령시 마지막 것만 적용됨 */
+
+  </style>
+</head>
+<body>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, reprehenderit numquam nemo ab similique aspernatur quas, ullam sit consequuntur qui eveniet officia corrupti ipsam illo iste, minus eius saepe nesciunt.</p>
+  <div class="box">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, magnam.</p>
+    <p class="title" >Lorem psum dolor sit amet consectetur adipisicing elit. Consequuntur, nostrum.</p>
+    <p class="title" style="color:#86f;">Lorem psum dolor sit amet consectetur adipisicing elit. Consequuntur, nostrum.</p>
+  </div>
+</body>
+</html>
