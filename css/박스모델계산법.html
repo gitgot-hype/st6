@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Sizing</title>
+  <style>
+    /* reset */
+    *{margin:0; padding:0;}
+
+    .box{
+      margin:  30px;
+      width: 200px;
+      height: 200px;
+      background-color: #ccc;
+      /* display: inline-block;  */
+     
+    }
+    .box1{
+      /* 좌우 마진 30*2 좌우보더 0 패딩좌우 20*2 너비 200  => 이 요소의 크기는 300
+      개발자도구 여백빼기 300- 30-30 =240*/
+      padding: 10px 20px;
+      /* 수직크기 마진상하 30*2 상하보더 0 상하패딩 10*2 
+       ==> 280 
+       개발자도구 바깥여백을 밴다  ==>220*/
+    }
+    .box2{
+      padding: 10px 20px;
+      box-sizing: content-box;
+    }
+    /* box-sizing:content-box;
+    박스모델의 게산법 정의
+    content-box값 widht / height -> 요소의 내용크기 border-boxrkqt
+    widht /height -> border+padding+콘첸트영역
+    */
+    .box3{
+      box-sizing: border-box;
+      padding: 10px 20px;
+
+    }
+    .box4{
+      /* box-sizing: border-box; */
+      box-sizing: content-box;
+      /* 
+      sidth/ height => border+padding+content영역
+       */
+      width: 300px;
+      border:10px dashed #000;
+      /* em : font-size 는 부모 글자크기기준
+      박스모델은 자신 글자크기 기준 */
+      padding: 2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="box box1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, iure ducimus aliquam rerum doloribus perferendis.</div>
+  <div class="box box2">Id nihil quos saepe autem, quisquam dolorum aspernatur quod repellat neque aut, assumenda quam recusandae?</div>
+  <div class="box box3">Amet obcaecati repellat debitis ut aspernatur quis cum tempore optio, est odio libero earum eligendi.</div>
+  <div class="box box4">Quos culpa nemo reiciendis delectus placeat eum quas necessitatibus, harum ipsum! Tempore, hic. Nobis, voluptate.</div>
+</body>
+</html>
