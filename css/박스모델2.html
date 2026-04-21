@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOX MODEL</title>
+  <style>
+    /* reset */
+    *{margin:0; padding: 0}
+   .box{
+      background-color:#ccc;
+      margin: 50px; 
+      width: 200px;
+      /* height: 150px; */
+      min-height: 150px;
+    }
+    .box2{
+      border-top: 10px solid #f00;
+      border-right: 10px dotted dodgerblue;
+      border-bottom: 4px dashed green;
+      border-left: 10px double;
+      /* 너비 200+10+10 */
+      padding: 10px 20px 30px 40px;
+      /* 너비가 달라짐 */
+    }
+    /* 
+    박스모델
+    속성 : 값1 값2 값3 값4
+    속성 : 상  우 하 좌
+    속성 : 값1 값2 값3   ==> 속성 : 값1 값2 값2 값3 */
+    .box3{
+      /* border : border-width border-style border-color */
+      border: 10px dashed blue;
+      /* 너비 200+10+10 */
+      padding: 10px 50px 30px ;
+      /* padding: 10px 50px 30px 50px ; */
+      /* 너비가 달라짐 */
+    }
+    .box4{
+      /* 공통된 부분을 선언후 필요없는 보더는 뒤에 none으로 지정 */
+      border: 10px dashed blue;
+      border-left: none;
+      border-right: none;
+      /* 너비 200 */
+      padding: 10px 50px ;
+    }
+  </style>
+</head>
+<body>  
+  <!-- class.box>박스 # -->
+  <div class="box box1">박스1</div>
+  <div class="box box2">박스2</div>
+  <div class="box box3">박스3</div>
+  <div class="box box4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at molestiae aperiam perferendis doloribus eius pariatur dolorum vero in quisquam soluta odit, possimus nisi, accusamus nulla id deleniti consectetur! Ad!</div>
+</body>
+</html>
