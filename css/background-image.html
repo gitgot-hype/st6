@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-image</title>
+  <style>
+    *{margin: 0; padding: auto;}
+    .box{
+      height: 300px;
+      border: 10px dotted rgba(0,0,0,0.5);
+      background-color: #ff3;
+      background-image: url(images/flower.png);
+      background-image: url(images/bg.jpg);
+      background-image: none;/* 기본값, 초기값 */
+      /* 배경의 이미지 크기가 요소보다 작을 경우 반복함 */
+      /* 배경이미지가 요소보다 클 경우 요소크기만큼만 보여줌. */
+      /* 배경이미지도 기본이 테두리부터 */
+      /* 배경이미지가 보이지 않는 부분은 배경색으로 표현됨 */
+      /* jpg는 두명생이 없음. png는 투명색이 있으므로 배경색이 보임 */
+      /*  */
+    }
+    .box1{
+      width: 500px
+    }
+    .box2{
+      width:80%;
+    }
+    .box3{
+      width: 40em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-wrap">
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+  </div>
+</body>
+</html>

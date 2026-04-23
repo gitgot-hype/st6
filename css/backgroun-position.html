@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-repeat</title>
+  <style>
+    *{margin: 0; padding: auto;}
+    .box{
+      height: 300px;
+      border: 10px dotted rgba(0,0,0,0.5);
+      background-color: #ff3;
+      font-size: 3em;
+      text-align: center;   
+      background-image: url(images/frame.png);
+      background-repeat: no-repeat;
+      background-repeat: repeat;
+      /* 배경이미지가 요소보다 작을 경우 반복되는 것을 설정 */
+      /* repeat, no-repeat, repeat-x, repeat-y */
+    }
+    .box1{
+      width: 500px;
+      background-position: 0 0;
+      background-position: left top;
+      /* 배경이미지의 기본요소의 왼쪽 위가 */
+    }
+    .box2{
+      width:80%;
+      background-position: 100% 50%;
+      /* 배경의 이미지를 오른쪽 100%  (수직의 가운데는 탑에서 가운데) 가운데 50% */
+      background-position: right center;
+    }
+    .box3{
+      width: 10em;
+      background-position: center center;
+      background-position: center;
+      background-position: 50% 50%;
+    }
+    .box4{
+      width: auto;
+      background-color: #fff;
+      background-image: url(images/sun.png);
+      background-position: 100px 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container-wrap">4
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+    <div class="box box4">box4</div>
+  </div>
+</body>
+</html>

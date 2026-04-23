@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상클래스 링크관련</title>
+</head>
+<style>
+  li{color:#68f;}
+  /* a태그는 color속성을 상속받지 않아요. */
+  /* :link{color:#333; } */
+  /* a태그는 기본값 : 글자 파란색, 방문한 사이트 href : 보라색, active 상태(클릭상태) : 빨강 */
+  /* a{color:#0f0;} */
+  /* a태그 요소의 상태에 따라서 설정을 지정 */
+  /* a:link{color:#333;} */
+  /* a:visited{color:#333;} */
+  /* a:hover{color:#68f} */
+  /* a:active{color:#333;} */
+  a:link,
+  a:visited,
+  a:active{color:#333; text-decoration: none;}
+  a:hover{
+    color:#68f;
+    text-decoration: unerline;
+  }
+  a:focus{
+    color:#f00;
+    text-decoration: underline;
+  }
+</style>
+<body>
+  <!-- ul>li*3>a>{메뉴$} -->
+  <ul>
+    <li>가상클래스</li>
+    <li><a href="https://www.naver.com">메뉴1</a></li>
+    <li><a href="https://www.google.com">메뉴2</a></li>
+    <li><a href="https;//www.daum.net">메뉴3</a></li>
+  </ul>
+</body>
+</html> 
