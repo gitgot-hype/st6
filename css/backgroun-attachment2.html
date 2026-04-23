@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-attachment2</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .container-wrap{
+      /* margin: 0 50px ; */
+      margin: 0;
+      /* margin: 0 50px ; */
+      background-color: #ccc;
+    }
+    .container-wrap > section{
+      /* 부모요소의 컨텐츠영역을 다 사용함. */
+      box-sizing: border-box;
+      /* 위 선언이 없으면 색상이 늘어남 */
+      width: 100%;
+      padding: 1em;
+      /* 모든섹센이 브라우저의 viewport 높이만금 다 차지 */
+      height: 100vh;
+      /* margin: 0 -50px; */
+      background-image: url(images/bg.jpg);
+      /* background-image: url(images/flower.png); */
+      /* background-image: url(images/sun.png); */
+      background-repeat: no-repeat;
+      background-color: #ac9;
+    }
+    .container-wrap > .section1{
+      background-color: rgba(255, 136, 102, 0.2);
+      background-position: 0 0;
+      background-image: none;
+    }
+    .container-wrap > .section2{
+      background-color: rgba(255, 136, 255, 0.2);
+      /* background-position: right bottom; */
+      /* background-attachment: scroll; */
+      background-position: center;
+      background-attachment: fixed;
+      /* 배경이미지의 기준이 요소가 아니라 브라우저가 됨.
+      background-position : right bottom : 브라우저의 오른쪽 아래 기준으로 이미지가 배치 */
+    }
+    .container-wrap > .section3{
+      background-color: rgba(102, 255, 136, 0.2);
+      background-position: center center;
+      background-image: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container-wrap">
+    <!-- section.section$*3>p.title>{section$} -->
+    <section class="section1">
+      <p class="title">section1</p>
+    </section>
+    <section class="section2">
+      <p class="title">section2</p>
+    </section>
+    <section class="section3">
+      <p class="title">section3</p>
+    </section>
+  </div>
+</body>
+</html>
