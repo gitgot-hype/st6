@@ -6,6 +6,9 @@
   <title>가상클래스 후버</title>
   <style>
     *{margin: 0; padding: 0;}
+    body{
+      margin: 30px;
+    }
     .product , .product>div{
       box-sizing: border-box;
 
@@ -20,10 +23,28 @@
     .product .thumb{
       background-color: #f68;
       min-height: 200px;
+      margin-bottom: 30px;
     }
     .product .desc{
       background-color: #68f;
     }
+    
+    /* 가상클래스는 웹에서 자주 발생하는 상태를 선택자
+    :hover 마우스를 어떤 요소위에 올려둔 상태
+     */
+     /* 마우스를 상품설명/상품이미지에 위치시키면 해당위치에 그림자 표시
+     마우스를 요소에 위치시키면 : hover
+      요소 ->상품이미지 .thumb, 상품설명 .desc
+      요소 -> .thumb, .desc 부모인--> .product
+      동작은 상품이미지( .thumb)에 그림자 표시
+       상품이미지 .thumb
+       그림자 표시 box-shadow */
+
+       .product:hover .thumb{
+        box-shadow: 0px 0px 10px rgba(102, 102, 102, 1);
+       }
+
+       
   </style>
 </head>
 <body>

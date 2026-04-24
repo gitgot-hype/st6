@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상요소 before after</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    h1,h2,h3{
+      font-size: 1.5em;
+    }
+    hr{display:none;}
+    /* 브라우저 전세를 쓰고 싶지만 가운데 정렬을 원해요(마켓컬리처럼) */
+    .box{
+      margin-top: 100px;
+      padding: 20px 0;
+    }
+    .box1{background-color: #f68;}
+    .box2{background-color: #6f8;}
+    .box3{background-color: #86f;}
+
+    .box::before{
+      /* content: "앞"; */
+      content: "";
+      display: block;
+      background-color: #000;
+      width: 3em;
+      height: 1px;
+      margin: auto;
+      margin-top: -70px;/*position*/
+    }
+    /* .box::after{content: "뒤";} */
+   
+    .box .inner{
+      width: 80%;
+      /* 블럭레벨을 부모의 가운데 정렬 */
+      margin: 0 auto; 
+      /* 위의 말은 부모의 영역에서 내영역을 쓰고 남은 부분에서 상하는 그냥 두고 좌우는 나눠서 써줘 */
+      margin-top: 70px;
+      
+    }
+    .box .inner::before{
+      /* ::before, ::after 가상요소는 인라인레벨
+       브라우저에 ::before, ::after 반드시 content속성을 지정*/
+      /* content:"제목"; */
+      content:""; /*빈 내용*/
+      display:block;
+      font-weight: bold;
+      font-size: 1.2em;
+      padding-bottom: 1em;
+      background-color: #ccc;/*삭제*/
+    }
+
+    /* .box .inner::after{content:"감사합니다."} */
+
+    .box .content::before{ content:'앞  ';}
+    .box .content::after{ content:'  뒤';}
+  </style>
+</head>
+<body>
+  <h1>가상요소 ::before ::after</h1>
+  <hr>
+  <div class="box box1">
+    <div class="inner">
+      <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, deleniti. Dolores sapiente repellendus asperiores soluta.</p>
+    </div>
+  </div>
+  <div class="box box2">
+    <div class="inner">
+      <p class="content">Adipisci deserunt aliquid molestias recusandae ducimus quod animi sunt obcaecati minima asperiores, impedit enim veniam?</p>
+    </div>
+  </div>
+  <div class="box box3">
+    <div class="inner">
+      <p class="content">Beatae recusandae doloribus unde molestiae deleniti est maiores voluptate quisquam rerum magni et, reprehenderit voluptas.</p>
+    </div>
+  </div>
+</body>
+</html>
