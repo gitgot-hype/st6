@@ -14,6 +14,19 @@
       text-decoration: line-through currentColor;
       text-decoration: line-through ; /*윗줄과 동일한 의미*/
     }
+    .exam1:hover{
+      color: #f00;
+    }
+    p{
+      display: none;
+      box-sizing: border-box;
+      background-color: aqua;
+      width: 50%; height: 10vh;
+      padding: 20px;
+    }
+    div:hover p{
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -22,5 +35,9 @@
     <li class="exam exam2">상품설명2</li>
     <li class="exam exam3">상품설명3</li>
   </ul>
+  <div>Hover over this div to show the p element
+    <p>Tada! Here I am!</p>
+  </div>
+  
 </body>
 </html>

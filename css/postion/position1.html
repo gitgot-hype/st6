@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postion1</title>
+  <style>
+    **{margin: 0;padding: 0; box-sizing: border-box;}
+    .wrap{
+      width: 65%;
+      min-height: 2000px;
+      margin: 0 auto;
+      background-color: #ccc;
+      padding: 30px;
+      border: 10px dashed #999;
+      position: relative; /*3번째 parent의 기준요소*/
+    }
+    .parent{ 
+      padding: 10px; /* parent 높이는  총 120px */
+    }
+    .parent:nth-child(1){ 
+      background-color: #f86;
+      position: static;
+      /* 기준X */
+      /* 일반흐름 D, 레이어개념 없음 */
+      left: 150px; top: 150px;
+    }
+    .parent:nth-child(2){ 
+      background-color: #6f8;
+      position: relative;
+      /* 기준은 자신 */
+      /*  형제와 부모에게 에이아웃의 영향을 안줌 - normal flow(일반흐름???) */
+      left: 150px; top: 150px;
+      
+    }
+    .parent:nth-child(3){
+      background-color: #86f;
+      position: absolute;
+      /* 기준을 가까운 조상의 position:static을 제회한 값으로*/
+      /* 형제, 부모의 레이아수에 영향을 줍니다. - nomal flow  XX */
+      /* 부모자식의 관계를 잃어요 */
+      /* 그래서 부모가 해당요소의 높이를 인식하지 못한다. */
+      /* 부모의 너비를 알지 못함. 원래위치에서 너비가 컨텐츠만큼 줄어든다.  너비를 지정하기에 편리 */
+      /* 레이어 요소가 됩니다. z-index */
+      /* left/right/top/bottom을 지정하지 않으면 원래 자기 자리에 위치함. */
+      left: 0; top: 0;
+      
+    }
+    .parent:nth-child(4){ 
+      background-color: #cf6;
+      /* 기준을 브라우저 */
+      /* 형제, 부모의 레이아수에 영향을 줍니다. - nomal flow  XX */
+      /* 부모자식의 관계를 잃어요 */
+      /* 그래서 부모가 해당요소의 높이를 인식하지 못한다. */
+      /* 부모의 너비를 알지 못함. 원래위치에서 너비가 컨텐츠만큼 줄어든다.  너비를 지정하기에 편리 */
+      /* 레이어 요소가 됩니다. z-index */
+      /* left/right/top/bottom을 지정하지 않으면 원래 자기 자리에 위치함. */
+      position: fixed;
+      left: 0; top: 0;
+      
+    }
+    .parent:nth-child(5){ 
+      background-color: #c8f;
+
+      
+    }
+    .parent .child{
+      width: 50px; height: 50px;
+      padding: 10px;
+      position: absolute;
+      /* normal flow에서 벗어나므로 부모가 해당요소의 높이를 인식하지 못함.
+      본인은 부모의 컨텐츠영역을 가져오지 못하므로 자신의 컨텐츠 크기만큰의 너비로 줄어듦.
+      기준요소: 가까운 조상부터 position이 설절된 요소(단 static은 제외) */
+      left: 0; top: 0;
+    }
+    .parent .child:nth-child(1){
+      background-color: #fff;
+    }
+    .parent .child:nth-child(2){
+      background-color: #0dd;
+    }
+    .box{
+      background-color: #dd0;
+    }
+    .postion:nth-child(5) .child{
+      position:static;
+    }
+    /* 요소의 위치 설정 법을 지정하는 position */
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- .parent*4>.child*2>.box>{box1$} -->
+    <div class="parent">
+      <div class="child">
+        <div class="box">box11</div>
+      </div>
+      <div class="child">
+        <div class="box">box12</div>
+      </div>
+    </div>
+    <div class="parent">
+      <div class="child">
+        <div class="box">box11</div>
+      </div>
+      <div class="child">
+        <div class="box">box12</div>
+      </div>
+    </div>
+    <div class="parent">
+      <div class="child">
+        <div class="box">box11</div>
+      </div>
+      <div class="child">
+        <div class="box">box12</div>
+      </div>
+    </div>
+    <div class="parent">
+      <div class="child">
+        <div class="box">box11</div>
+      </div>
+      <div class="child">
+        <div class="box">box12</div>
+      </div>
+    </div>
+    <div class="parent">
+      <div class="child">
+        <div class="box">box11</div>
+      </div>
+      <div class="child">
+        <div class="box">box12</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

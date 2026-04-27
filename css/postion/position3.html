@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrap">
+    <div class="thumb">
+      <img src="../images/test-img.png" alt="">
+      <span class="like">좋아요</span>
+      <span class="sale-box">10%</span>
+    </div>
+  </div>
+  <style>
+    *{margin: 0; padding: 0;}
+    .wrap{
+      margin: 100px 50px;
+      background-color: #cc0;
+    }
+    .thumb{
+      background-color: #f00;
+    }
+    .thumb .like{
+      background-color: #86f;
+    }
+    .thumb .sale-box{
+    background-color: #f68;
+    }
+
+    /* 좋아요, 10% 요소의 크기를 50px * 50px */
+    /* thumb의 직계자손 span */
+    .thumb span{width: 50px;padding: 50px;}
+    /* span 인라인은 넓이 높이를 줄수 있더.     */
+    .thumb span{display: block;}
+    /* 좋아요, 세일박스의 위치를 지정  left/right/top/bottom으로 지정
+    positon:relavie, absolute, fixed */
+    .thumb span{
+      position: absolute;
+      /* 가까운 조상중에 position(static제외한)이 설정되어 있는 요소 기준 자정해줘야 한다.*/
+    }
+    .thumb{
+      position: relative;
+      /* normal flow에서 벗어나지 않고 absolute의 기준요소 */
+    }
+    /* 좋아요는 이미지의 왼쪽위를 기준으로 위치 */
+    .thumb span.like{
+      left: 10px; top: 10px;
+    }
+    /* 세일박스는 이미지의 오른꼭 위 기준으로 위치 */
+    .thumb span.sale-box{
+      right: 10px; top: 10px;
+    }
+    /* .thumb크기의 부모요소의 4단배치가 되게 하고 싶어요*/
+    .thumb{width: 25%;}
+    /* 이미지가 커서 .thumb보다 커진 문제가 생김 ==> */
+    .thumb img{width: 100%;}
+    /* img요소는 인라인 요소라서 태그와 태그사이의 줄바꿈을 한글자로 인식하는 문제 발생 */
+    .thumb img{display: block;}
+
+  </style>
+</body>
+</html>
