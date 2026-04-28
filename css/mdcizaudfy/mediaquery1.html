@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: #ccc;
+      font-size: 16px;
+    }
+    body::before{
+      content: "테스크탑 미디어쿼리";
+    }
+    @media(max-width:1400px){
+     body{
+      background-color: #fcc;
+     }
+      /* font-size: 16px; 지정하지 않을 경우 상속 */
+      body::before{
+      content: "최대크리 1400픽셀인 즉 1400이하 모니터";
+      }
+    }/*미디어쿼리 마감 media(max-width:1400px) */
+    @media(max-width:1200px){
+     body{
+      background-color: #cfc;
+     }
+      /* font-size: 16px; 지정하지 않을 경우 상속 */
+      body::before{
+      content: "최대크리 1200픽셀인 즉 1200이하 모니터";
+      }
+    }/*@media(max-width:1200px)*/
+    @@media(min-width:1000px) and (max-width:1200px){
+
+    }
+  </style>
+</head>
+<body>
+  
+</body>
+</html>
