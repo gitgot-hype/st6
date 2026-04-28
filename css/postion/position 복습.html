@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postion 복습</title>
+  <style>
+    *{margin: 0;padding: 0;}
+    .wrap{
+      margin: 50px;
+      background-color: #ccc;
+      padding: 20px;
+      position: relative;
+    }
+    .wrap .section{
+      background-color: #ddd;
+      padding: 20px;
+      position: relative;
+    }
+    .wrap .section .parent{
+      background-color: beige;
+      padding: 20px;
+      position: relative;
+    }
+    .wrap .section .parent .child:nth-child(1){
+      background-color: magenta;
+      padding: 10px;
+      width: 50px; height: 50px;
+      box-sizing: border-box; /* margin padding content 포함한 크기, 패딩 마진을 주더라도 지정된 크기 50*50 크기 */
+      top: 0; left: 0;
+      position: fixed; /* 브라우저 기본으로 움직임 */
+      position: absolute; /* 가장 가까운 조상중  postion static 제외한 값이 있는 조상의 위치에서 움직임 */
+    }
+    .wrap .section .parent .child:nth-child(2){
+      background-color: cyan;
+      /* box-sizing: border-box; */
+      padding: 10px;
+      width: 50px; height: 50px; /* border-box가 해제되어 있으므로 사이즈는 (10+50+10)*(10+50+10)*/
+      /* 베이지배경의 오른쪽 위에 배치 */
+      right: 0px; top: 0px;
+      position: relative;   /* 본인의 원위치에서 움직임 */
+      position: fixed; /* 브라우저 기본으로 움직임 */
+      position: absolute; /* 가장 가까운 조상중  postion static 제외한 값이 있는 조상의 위치에서 움직임 */
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="section">
+      <div class="parent">
+        <div class="child">child1</div>
+        <div class="child">child2</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -3,18 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>positon4</title>
+  <title>positon4- 1줄 5단 상품, 상품카드 좋아요, 세일 이미지랑 겹쳐서</title> 
+  <style>
+    /* reset */
+    *{margin: 0; padding: 0;}
+    ol, ul{list-style: none;}
+    .wrap{
+      background-color: beige;
+      margin: 30px;
+    }
+    /* 상품카드 썸네일 */
+    .ec-base-product{
+    
+    }
+    .ec-base-product .prdList{
+      background-color: #333;
+      border: 1px solid #f00;
+    }
+    /* float가 지정된 자식요소를 인식하지 못하는 문제 해결 */
+        /* 1줄의 4단 상품 표시 */
+
+    .ec-base-product .prdList::after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+    /* 1줄의 4단 상품 표시 */
+    .prdList li{
+      float: left;/*norma flow에서 벗어남. 무모가 이 요소의 크기를 인식하지 못함.*/
+      width: 25%;
+      box-sizing: border-box;
+      background-color: #cc0;/*테스트 후 삭제*/
+      border: 1px solid #000;/*테스트 후 삭제*/
+    }
+    .prdList li .prdList__item{
+      position:relative; /*.sale_bos .likeButton 기준이 되기 위해.*/
+    }
+    .prdList li .prdList__item .thumbnail{}
+    .prdList__item .thumbnail img{
+      opacity: 0.5; /*테스트 후 삭제*/
+      /* 이미지를 25%하는 자신의 부모의 크기에 맞게 자동 조절되게 하고 싶어요 */
+      /* 이미지가 부모의 콘텐츠 너비를 다 사용 */
+      /* 이미자 부모의 콘텐츠 너비를 자동 조절 */
+      width: 100%;
+      display: block;
+    }
+    /* 상품아이템의 오른쪽 위 배치 , 형제관계는 기눚요소가 도리수 었다.*/
+    /* 
+       누가? .sale_box
+       배치법? position:absolute; 
+       위치? 오른쪽 위  right: 5px;  top:5px;
+       상품 아이템 .prdList__item,기준이 되는요소=다른요소=> 설정필요 => position: relative;
+       */
+       
+       .prdList__item .thumbnail .sale_box{
+        position: absolute;
+        right: 5px; top: 5px;
+       }
+       /* 상품아이템의 왼쪽 위 배치 */
+       /* 
+       누가?  .likeButton 
+       배치법? position:absolute; 
+       왼쪽쪽 위  left: 5px;  top:5px;       
+       상품 아이템 .prdList__item,기준이 되는요소=다른요소=> 설정필요 => position: relative;
+    */
+    .prdList__item .thumbnail .likeButton{
+      position: absolute;
+      left: 5px; top: 5px;
+    }
+  </style> 
 </head>
 <body>
+  <!-- float 단처리 레이아웃, positon,left/right/top/bottom 요소를 배치 -->
   <div class="wrap">
     <div class="ec-base-product">
-      <!-- ul.prdList>li*6>div.prdList__item>.thumbnail>img+.sail_box+.likeButton -->
+      <!-- ul.prdList>li*6>div.prdList__item>.thumbnail>img+.sale_box+.likeButton -->
       <ul class="prdList">
         <li>
           <div class="prdList__item">
             <div class="thumbnail">
               <img src="../images/test-img.png" alt="">
-              <div class="sail_box">10%</div>
+              <div class="sale_box">10%</div>
               <div class="likeButton">like</div>
             </div>
           </div>
@@ -23,7 +92,7 @@
           <div class="prdList__item">
             <div class="thumbnail">
               <img src="../images/test-img.png" alt="">
-              <div class="sail_box">10%</div>
+              <div class="sale_box">10%</div>
               <div class="likeButton">like</div>
             </div>
           </div>
@@ -32,7 +101,7 @@
           <div class="prdList__item">
             <div class="thumbnail">
               <img src="../images/test-img.png" alt="">
-              <div class="sail_box">10%</div>
+              <div class="sale_box">10%</div>
               <div class="likeButton">like</div>
             </div>
           </div>
@@ -41,7 +110,7 @@
           <div class="prdList__item">
             <div class="thumbnail">
               <img src="../images/test-img.png" alt="">
-              <div class="sail_box">10%</div>
+              <div class="sale_box">10%</div>
               <div class="likeButton">like</div>
             </div>
           </div>
@@ -50,7 +119,7 @@
           <div class="prdList__item">
             <div class="thumbnail">
               <img src="../images/test-img.png" alt="">
-              <div class="sail_box">10%</div>
+              <div class="sale_box">10%</div>
               <div class="likeButton">like</div>
             </div>
           </div>
@@ -59,7 +128,7 @@
           <div class="prdList__item">
             <div class="thumbnail">
               <img src="../images/test-img.png" alt="">
-              <div class="sail_box">10%</div>
+              <div class="sale_box">10%</div>
               <div class="likeButton">like</div>
             </div>
           </div>
