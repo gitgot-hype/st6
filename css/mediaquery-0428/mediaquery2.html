@@ -46,6 +46,7 @@
     header .gnb-wrap{
       background-color: #cfc;
       margin-left: 50px;
+      display: block;
     }
     header .gnb-wrap ul.gnb{}
     /* 블록레벨인 li를 한줄로 배치 */
@@ -64,9 +65,25 @@
     }
     /* 햄버거 메뉴를 1024px 이상에는 표시하지 않음, 1024px이하에서 표시 */
     header .m-nav-btn{
-      display: none;
+      /* display: none; */
     }
-
+    @media (min-width:1025px){
+      /* 장비특성에 맞는 클래스명으로마 diplay를 지정하는게 좋다. */
+      . header .m-nav-btn{
+        display: none;
+      }
+    }
+    
+    @media (max-width:1024px){
+      /* 장비의 특정조건에 따라서 표시 설정 */
+      .pc-only{
+        display: none !important;
+      }
+      /* 장비특성에 맞는 클래스명으로마 diplay를 지정하는게 좋다. */
+      .mobile-only-block{
+        display: block ;
+      }
+    }/* //@media (max-width:1024px) */
   </style>
 </head>
 <body>
@@ -74,7 +91,7 @@
     <header>
       <div class="inner">
         <h1 class="logo">CHOI</h1>
-        <nav class="gnb-wrap">
+        <nav class="gnb-wrap pc-only">
            <ul class="gnb">
             <li><a href="">menu1</a></li>
             <li><a href="">menu2</a></li>
@@ -87,7 +104,7 @@
           <a href="">상단기능매뉴1</a><a href="">상단기능매뉴2</a><a href="">상단기능매뉴3</a>
         </div>
         <!-- // .util -->
-         <div class="m-nav-btn">
+         <div class="m-nav-btn mobile-only-block">
           <img src="../images/menu.png" alt="모바일 사이드 메뉴 펼치기">
          </div>
       </div>

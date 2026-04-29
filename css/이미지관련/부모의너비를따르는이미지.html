@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>부모의 너비를 따르는 이미지</title>
+  <style>
+    *{margin: 0;padding:0;}
+    .wrap{margin: 30px;}
+    .img-wrap{
+      /* width: auto; */
+      background-color: #f00;
+    }
+    /* 이미지는 부모의 너비랑 상관없이 항상 부모의 너비를 따라서 자동 조절ㅇ */
+    .img-wrap img{
+      display: block;
+      /* height: auto; 이미지의 가로세로 비율을 고정(자동으로 auto로 설정됨.*/
+      width: 100%;
+      opacity: 0.5;
+    }
+    /* 부모의 너비를 따르지만 자신의 크기보다는 더 커지지 않아야 할떄 */
+    .max-img{
+      width: 80%;
+      background-color: #0f0;
+    }
+    .max-img img{
+      opacity: 0.5; /*테스트 삭제*/
+      /* 부모의 너비를 따르는것 : width:100% */
+      /* width: 80%; */
+      /* 부모의 너비를 따르지만 자기 크기보다는 커지지 말아라 */
+      max-width: 100%;
+      /* width만 줄 경우 height는 auto로 자동비율만큰 크기지정 */
+    }
+    .img-wrap2{
+      background-color: #0f0;
+      height: 400px;
+      /* 인라인레벨에서 height지정이 가능한가? */
+    }
+    /* 이미지의 부모의 크키를 변경하여 높이 너비를 수정 */
+    .img-wrap2 img{
+      opacity: 0.5 /*테스트 삭제*/;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="img-wrap">
+      <img src="../images/smartbanner-01-01-pc.png" alt="원피스 할인 이벤트">
+    </div>
+    <div class="max-img">
+      <img src="../images/test-img.png" alt="">
+    </div>
+    <!-- 이미지세로를 맞추는 이미지 -->
+    <div class="img-wrap2">
+      <img src="../images/test-img.png" alt="">
+    </div>
+  </div>
+
+  
+</body>
+</html>
