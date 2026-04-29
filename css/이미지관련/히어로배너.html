@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* hero-banner 부모 영역은 부모의 컨텐츠 영역 너비를 다 사용
+     .wrap의 컨첸츠 영역의 너비를 다 사용 */
+    *{margin: 0;padding: 0;}
+    .hero-banner{width: 100%;}
+    .hero-banner picture{
+      display: block;
+      background-color: #f00;
+    }
+    .hero-banner picture source,
+    .hero-banner picture img{
+      display: block;
+      width: 100%;
+    }
+    .hero-banner picture source{}
+    .hero-banner picture img{}
+    @media(max-width:768px){
+      .hero-banner picture source,
+      .hero-banner picture img{
+        width: auto;
+        height: calc(100vh-(50px+50px));
+        object-fit: cover;
+        object-position: left bottom;
+      }
+    }
+  </style>
+  <!-- <style>
+    *{margin: 0; padding: 0;}
+    body{ overflow: hidden;}
+    .wrap{width: 100%;}
+    .hero-banner{
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .hero-banner picture{
+      display: block;
+      width: 100%;
+      height: 100dvh;
+    }
+    .hero-banner img{
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
+    }
+
+  </style> -->
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero-banner">
+      <!-- picture  태그는 자식인 xource태그 입력 순으로 브라우저에 표시할 수 있는지 여부 확인, 할수 없으면 다음 source를 표시, 안되면  다음 source 를 표시.. 반곡.. 모는 source 적용이 안되면 최종 img 적용
+       적용여부는 media=""로 결정 -->
+      <picture>
+        <source srcset="../images/smartbanner-01-01-mobile.png" media="(max-width:768px)">
+        <img src="../images/smartbanner-01-01-pc.png" alt="">
+      </picture>
+    </div>
+
+  </div>
+</body>
+</html>

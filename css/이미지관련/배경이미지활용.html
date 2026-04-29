@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  
+<!-- .noto-sans-kr-<uniquifier> {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+.nanum-pen-script-regular {
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+} -->
+
+  <style>
+    *{margin: 0;padding: 0;}
+    .wrap{}
+    .visual-section{
+      /* 100vw 스크롤바를 합친 크기를 사용 */
+      /* viewport의 크기를 다 사용할때 100% 사용 */
+      width: 100%;
+      height: 100vh;
+      background-color: #97948d;
+      background-image: url(../images/background-test.jpg);
+      background-repeat: no-repeat;
+      background-position: right top;
+      /* background-size: contain; */
+      background-size: auto 200vh;
+      /* 자식요소들의 인라인블록을 정렬하기 위해서 */
+      text-align: center;
+      align-content: center;       
+    /* .visual-section::after의기준 */
+      position: relative;
+      
+    }
+    .visual-section::after{
+      content: "fkfkfkf";
+      display: block;
+      background-color: rgba(0, 255, 255, 0.5);
+      width: 100%; height: 100%;
+      /* 레이어로 관리가 필요하므로 z-index로 관리해야함. */
+      position: absolute;
+      left: 0; top: 0;
+      z-index: 5;
+    }
+    .visual-section .text-wrap{
+      /* 레이어 순서관리 z-index.    position. transform 사용시 레이어로... */
+      position: relative;
+      z-index:20;
+      display: inline-block;
+      width: 50%;
+      padding: 1rem 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      font-family:  "Noto Sans KR", sans-serif;
+      color: #8bff67;
+      /* padding: 1rem 2rem; */
+    }
+    .visual-section .text-wrap .title{
+      font-size: 4rem;
+      font-weight: 100;
+    }
+    .visual-section .text-wrap .desc{
+      /* font-family:  "Noto Sans KR", sans-serif; */
+      font-size: 1rem;
+      font-weight: 200;
+      /* color: #fff; */
+
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="visual-section">
+      <!-- .text-wrap>p.title>lorem3^p.desc>lorem20 -->
+      <div class="text-wrap">
+        <p class="title">Lorem, ipsum dolor.</p>
+        <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Eos corporis placeat dignissimos exercitationem suscipit ullam repellendus, assumenda eligendi nihil ut?</p>
+      </div>`
+    </div>
+  </div>
+</body>
+</html>
