@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex5-item의 순서</title>
+  <link rel="stylesheet" href="/reset.css">
+ <!-- 
+  1. flex 선언 : container
+  2. flex 방향을 결정 : conteainer
+  3. 아이템이 축소/확장을 결정 : item  축소0 확장X
+  4. 아이템이 크기결정 : item
+  5. 아이템의 줄바꿈을 결정 container
+  6. 여백관리 gap : dontener   margin : item
+  7. 저열 container / item, margin
+  -->
+  <style>
+    .wrap{margin: 50px;}
+    .container{
+      background-color: #fcc;
+    }
+    .item{
+      border: 1px solid #000;
+    }
+ 
+    .flex{
+      display: flex;
+      /* 2 */
+      /* flex-direction: row; */
+      /* 5 */
+      /* flex-wrap: nowrap;6*/
+      /* 6 */
+      /* gap: 1rem; */
+      /* 7 */
+      /* 주축 jstify-content */
+      /* justify-content: flex-start; */
+      /* 교차축 align-content */
+      /* align-content: stretch; */
+    }
+    .flex .item{
+      /* 3 */
+      /* flex-grow: 0; */
+      flex-grow: 0;
+      /* flex-shrink: 1; */
+      flex-shrink: 0;
+      /* flex-basis: auto; */
+      /* 4 크기 지정 flex-basis, width, height
+      단 제회사항 flex-bais:auto; 기본값 
+      didth: 값; height:값 */
+      /* width: auto; */
+      /* height: auto; */
+      /* width: calc(아이템크기% - (여백 * (단 - 1) / 단)); */
+      width: calc(25% - (1rem * (4 - 1) / 4));
+      height: auto;
+      margin: 5px;
+    }
+    .flex .item:nth-child(1){order: 3;}
+    .flex .item:nth-child(2){order: 2;}
+    .flex .item:nth-child(3){order: 4 ;}
+    .flex .item:nth-child(4){ order: 1;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="container flex">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+    </div>
+  </div>
+</body>
+</html>

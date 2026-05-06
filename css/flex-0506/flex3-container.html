@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex3-flex container </title>
+  <link rel="stylesheet" href="/reset.css">
+  <!-- 플렉스컨테이너 특정실습을 위해서 아이템의 확장/축소 X -->
+  <!-- 
+  1. flex 선언 : container
+  2. flex 방향을 결정 : conteainer
+  3. 아이템이 축소/확장을 결정 : item
+  4. 아이템이 크기결정 : item
+  5. 아이템의 줄바꿈을 결정 container
+  6. 여백관리 gap : dontener   margin : item
+  7. 저열 container / item, margin
+  -->
+  <style>
+    .wrap{margin: 50px;}
+    .container{
+      background-color: #fcc;
+    }
+    .item{
+      border: 1px solid #000;
+    }
+    
+    .flex{
+      width: 300px;
+      height: 300px;
+      /* 1. flex container 선언 : 단이 될 요소의 부모에게 선언해 줘야 한다. */
+      display: flex;
+      /* 2. flex의 방향 결정 :container 주축, 교차축 결정*/
+      flex-direction: row;
+      /* 전제조건 : 하이템의 확장은 모르겠지만 아이템 축소는 되지 않도록... */
+      /* 5.flex-wrap 플렉스 켄테이너 안에서 flex 아이템의 합이 플렉스컨테이너보다 클 경우 줄바꿈  flex-wrap*/
+      flex-wrap: wrap;
+      /* 6. 여백관리 gap container margin item
+      gap, justfy-content, align-content를 같이 지정하면 원하는 레이아이수을 못얻을 수 있다.  */
+      column-gap: 1rem;
+      row-gap: 10px;
+      /* 7. 정렬 */
+      /* 7-1 추축의 정렬 */
+      /* start cneter end space-around space-betwwen space-evenly부모크기릐 주축 방향  */
+      justify-content: start;
+      /* 7-2교차축의 정렬 */
+      /* 7-2-1 여러줄일 경우 정렬 align-content */
+      /* 7-221 한줄일 경우 정렬 align-item*/
+      /*플렉스 컨테이너이 교차축의 크기에 맞추서 늘어나라 */
+      /* align-content: stretch; */
+      align-content: start;
+    }
+    .flex .item{
+      /* 3. 아이템의 축소/확정을 결정 */
+      flex-grow: 0;
+      flex-shrink: 0;
+      /* 4 아이템의 크기 결정 */
+      width: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="container flex">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+    </div>
+  </div>
+</body>
+</html>

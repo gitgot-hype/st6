@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex3- </title>
+  <link rel="stylesheet" href="/reset.css">
+ <!-- 
+  1. flex 선언 : container
+  2. flex 방향을 결정 : conteainer
+  3. 아이템이 축소/확장을 결정 : item
+  4. 아이템이 크기결정 : item
+  5. 아이템의 줄바꿈을 결정 container
+  6. 여백관리 gap : dontener   margin : item
+  7. 저열 container / item, margin
+  -->
+  <style>
+    .wrap{margin: 50px;}
+    .container{
+      background-color: #fcc;
+    }
+    .item{
+      border: 1px solid #000;
+
+    }
+ 
+    .flex{
+      display: flex;
+    }
+    .flex .item{}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="container flex">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+    </div>
+  </div>
+</body>
+</html>
