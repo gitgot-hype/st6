@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex2 flex컨테이너와 flex 아이템</title>
+  <!-- <link rel="stylesheet" href="/reset.css"> -->
+  <style>
+    .wrap{margin: 50px;}
+    .container{
+      /* width: auto; */
+      box-sizing: border-box;
+      /* padding: 1rem; */
+      background-color: #fcc;
+    }
+    .item{
+      border: 1px solid #000;
+      box-sizing: border-box;
+    }
+    .flex{
+      /* overflow: auto; 넘치면 스크롤로 보여줘 */
+      /* 1. flext 선언 : flex blox(flex 컨테이너)  */
+      display: flex;
+      /* 2. flex 의 방향설정(수평 또는 수직)
+      주축의 방향은  flex-derection의 방향과 같다. */
+      /* flex-direction: row;  기본값 */
+      flex-direction: row;
+      /* flex-direction: column; */
+      /* 4. flex-wrap 만약에 item에 flex-shrink:0; 설정시
+      넘처나는 부모의 크기보다 넘쳐나는 item 줄바꿈 */
+      /* flex-wrap: nowrap; */
+      flex-wrap: wrap;
+      /* 6. gap은 flex 아이템사이의 여백관리 */
+      gap: 5px 10px;
+      /* 7. 아이템의 정렬 */
+    }
+    /* flex 컨테이너의 직계자식은 flex 아이템이 된다 */
+    /* 3. flex item 주축크기 확장/축소 결정 */
+    .flex .item{
+      /* width: 25%; */
+      /* calc(값1 - 값2) 
+      컨테이너에  gap을 지정했을때 계산식(아이템 하나의 크기 - (gap * (단의 수 - 1))/단의 수)
+      */
+      /* 4. 아이템크기 결정 */
+      width: calc(25% - (10px * (4 - 1))/4);
+      /* 아이템을 부모의 공간에 맞게 확장 */
+      /* flex-grow: 0; */
+      /* 5. 아이템을 부모의 공간에 맞게 축소 */
+      flex-shrink: 0;
+      align-items: center;
+    }
+    .flex2{
+      background-color: #ecc;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-content: center;
+      height: 500px;
+      margin-top: 50px;
+    }
+    .item2{
+      background-color: #0bd;
+      color: #fff;
+      margin: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="container flex">
+      <div class="item"> Lorem</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>      
+      <div class="item"> Lorem</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+    </div>
+    <div class="flex2">
+      <div class="item2"> Lorem</div>
+      <div class="item2">item2</div>
+      <div class="item2">item3</div>
+      <div class="item2">item4</div>      
+      <div class="item2"> Lorem</div>
+      <div class="item2">item2</div>
+      <div class="item2">item3</div>
+      <div class="item2">item4</div>
+    </div>
+  </div>
+</body>
+</html>

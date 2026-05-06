@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flext1 수직 수평 가운데 정</title>
+  <link rel="stylesheet" href="/reset.css">
+  <style>
+    .visual-section{
+      display: flex;
+      background-color: #ffc;
+      /* view port를 가득 채운 visual-section */
+      box-sizing: border-box;
+      width: 100%;/*스크롤바를 제외한 전체크기*/
+      height: 100vh;
+      /* 2. 발향 : flex-direciton :row; */
+      /* 5 */
+      /* 6 */
+      /* 7. 정렬ㅇ */
+      /* justify-content: flex-start;
+      align-items: stretch; */
+      justify-content: center;
+      align-items: center;
+    }
+    .visual-section .text-wrap {
+      /* flex item */
+      background-color: #cff;
+      /* 3  */
+      /* flex-grow: 0; */
+      /* flex-shrink: 1; */
+      /* flex: none; */
+      /* 4 */
+      width: 50%;
+      min-width: 300px;
+      max-width: 500px;
+      box-sizing: border-box;
+      padding: 1rem 2rem;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="visual-section">
+      <div class="text-wrap">
+        <div class="title">Title</div>
+        <div class="desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, dolore? Non atque officia expedita, tempora ducimus reiciendis placeat odit illo.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, dolore? Non atque officia expedita, tempora ducimus reiciendis placeat odit illo.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, dolore? Non atque officia expedita, tempora ducimus reiciendis placeat odit illo.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, dolore? Non atque officia expedita, tempora ducimus reiciendis placeat odit illo.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, dolore? Non atque officia expedita, tempora ducimus reiciendis placeat odit illo.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, dolore? Non atque officia expedita, tempora ducimus reiciendis placeat odit illo.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas, dolore? Non atque officia expedita, tempora ducimus reiciendis placeat odit illo.</div>        
+      </div>
+    </div>
+  </div>
+</body>
+</html>

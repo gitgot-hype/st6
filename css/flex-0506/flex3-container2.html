@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex3-flex container </title>
+  <link rel="stylesheet" href="/reset.css">
+  <!-- 플렉스컨테이너 특정실습을 위해서 아이템의 확장/축소 X -->
+  <!-- 
+  1. flex 선언 : container
+  2. flex 방향을 결정 : conteainer
+  3. 아이템이 축소/확장을 결정 : item
+  4. 아이템이 크기결정 : item
+  5. 아이템의 줄바꿈을 결정 container
+  6. 여백관리 gap : dontener   margin : item
+  7. 저열 container / item, margin
+  -->
+  <style>
+    .wrap{margin: 50px;}
+    .container{background-color: #fcc }
+    .item{border: 1px solid #000; }
+    
+    .flex1{
+      width: 300px;
+      height: 300px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      /* column-gap: 1rem;
+      row-gap: 10px;      */
+      justify-content: space-around;      
+      align-content: start;
+      margin-bottom: 50px;
+    }
+    .flex1 .item{
+      flex: grow 0;
+      flex-shrink: 0;
+      width: 80px;
+      margin: 10px;
+      box-sizing: border-box;
+    }
+    /* flex2 */
+    .flex2{
+      /* 1 */
+     display: flex; 
+     /* 실습을 위해서 제한함 */      
+     width: 300px; height: 150px;
+     /* 2 */
+     /* flex-direction: row; */
+     flex-direction: column;
+     /* 5 */
+     flex-wrap: wrap;
+     /* 6 */
+     /* gap과 justify-content 함꼐 지정시 원하는 레이아웃 아 나올수 있다. */
+     gap: 1rem;
+     /* 7. 주축 정렬 */
+     justify-content: space-evenly;
+     /* 교차축의 정렬 */
+     align-content: space-evenly;
+    }
+    .flex2 .item{
+      /* 3 */
+      flex-grow: 0;
+      flex-shrink: 0;
+      /* 4 */
+      width: 80px;
+      /* 단처리를 위한 % */
+      width: calc(25% - (1rem * (4 - 1) / 4));
+      height: 60px;
+      box-sizing: border-box;
+    }
+  </style>
+<body>
+  <div class="wrap">
+    <div class="container flex1">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+    </div>
+    <div class="container flex2">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+      <div class="item">item4</div>
+      <div class="item">item4</div>
+      <div class="item">item4</div>
+      <div class="item">item4</div>
+    </div>    
+  </div>
+</body>
+</html>

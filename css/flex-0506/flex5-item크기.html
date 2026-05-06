@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex5-item의 크기 지정 </title>
+  <link rel="stylesheet" href="/reset.css">
+ <!-- 
+  1. flex 선언 : container
+  2. flex 방향을 결정 : container
+  3. 아이템이 축소/확장을 결정 : item  축소0 확장X
+  4. 아이템이 크기결정 : item
+  5. 아이템의 줄바꿈을 결정 container
+  6. 여백관리 gap : dontener   margin : item
+  7. 저열 container / item, margin
+  -->
+  <style>
+    .wrap{margin: 50px;}
+    .container{
+      background-color: #fcc;
+      max-height: 50px;
+    }
+    .item{
+      border: 1px solid #000;
+    }
+ 
+    .flex{
+      /* 1 선언 */
+      display: flex;
+      /* 2  방향 */
+      /* flex-direction: row; */
+      /* flex-direction: row; */
+      flex-direction: column;
+      /* 5 */ 
+      /* flex-wrap: nowrap;*/
+      flex-wrap: wrap;
+      /* 6 */
+      /* gap: 0; */
+      /* gap:0.2rem; */
+      /* 7 */
+      /* 주축 jstify-content */
+      /* justify-content: flex-start; */
+      /* justify-content: space-between; */
+      /* 교차축 align-content */
+      /* align-content: stretch; */
+      /* align-content: center; */
+    }
+    .flex .item{
+      /* 3 */
+      /* flex-grow: 0; */
+      flex-grow: 0;
+      /* flex-shrink: 1; */
+      flex-shrink: 0;
+      /* flex-basis: auto; */
+      /* 4 크기 지정 flex-basis, width, height
+      단 제회사항 flex-bais:auto; 기본값 
+      didth: 값; height:값 */
+      /* width: auto; */
+      /* height: auto; */
+      /* width: calc(아이템크기% - (여백 * (단 - 1) / 단)); */
+      width: calc(25% - (10px * (5 - 1) / 5)); 
+      height: auto;
+    }
+    /* .flex .item:nth-child(1){ flex-grow: 3;}
+    .flex .item:nth-child(2){ flex-grow: 2;}
+    .flex .item:nth-child(3){ flex-grow: 1;}
+    .flex .item:nth-child(4){ flex-grow: 1;} */
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="container flex">
+      <div class="item">item1</div>
+      <div class="item">item2</div>
+      <div class="item">item3</div>
+      <div class="item">item4</div>
+      <div class="item">item4</div>
+      <div class="item">item4</div>
+      <div class="item">item4</div>
+      <div class="item">item4</div>
+      <div class="item">item4</div>
+      <div class="item">item4</div>
+      <div class="item">item4</div>
+      <div class="item">item4</div>
+    </div>
+  </div>
+</body>
+</html>
