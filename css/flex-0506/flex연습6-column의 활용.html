@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex3-column </title>
+  <link rel="stylesheet" href="/reset.css">
+ <!-- 
+  1. flex 선언 : container
+  2. flex 방향을 결정 : conteainer
+  3. 아이템이 축소/확장을 결정 : item
+  4. 아이템이 크기결정 : item
+  5. 아이템의 줄바꿈을 결정 container
+  6. 여백관리 gap : dontener   margin : item
+  7. 저열 container / item, margin
+  -->
+  <style>
+    /* 모양 */
+   .inner{background-color: #ccc;}
+   #top_nav_box{background-color: #fcc; box-sizing: border-box;}
+   #top_nav_box>{box-sizing: border-box; padding: 0.5rem;}
+   #top_nav_box .top_logo{background-color: beige;}
+   #top_nav_box .top_category{background-color: dodgerblue;}
+   #top_nav_box .top_mypage{background-color: purple;}
+
+   /* 크기 지정 */
+ 
+   /* flex 용 */
+   .inner{}
+   #top_nav_box{
+    display: flex;
+    /* 2 */
+    flex-direction: column;
+    /* 5 */
+    /* 6 */
+    /* 정렬 추축 : 위아래   교차축 : 좌우 */
+    /* justify-content: flex-start; */
+    align-items: center;
+    /* .top_mypage 의 부모에게 */
+    position: relative;
+   }
+   /* 3 확장0/축소1 */
+   /* 4 flex-basis:auto; */
+   #top_nav_box .top_logo{width: 100px;}
+   #top_nav_box .top_category{min-width: 600px; max-width: 700;}
+   #top_nav_box .top_mypage{
+    width: 150px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+ 
+
+  </style>
+</head>
+<body>
+  <div class="inner">
+    <div class="top_nav_box" id="top_nav_box">
+      <div class="top_logo">로고</div>
+      <div class="top_category">카테고리</div>
+      <div class="top_mypage">마이페이지</div>
+    </div>
+    <!-- //. #top_nav_box -->
+  </div>
+  <!-- //.inner -->
+</body>
+</html>

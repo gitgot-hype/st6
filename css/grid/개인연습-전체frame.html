@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=.conta, initial-scale=1.0">
+  <link rel="stylesheet" href="/reset.css">
+  <title>Document</title>
+  <style>
+    .container{
+      margin: 50px;
+      /* width: 80%; */
+      height: 100vh;
+      display: grid;
+      grid-template-areas: 
+      "header header"
+      "menu content"
+      "footer footer";
+      grid-template-columns: 1fr 3fr;
+      gap: 0.4rem;
+      background-color: dodgerblue;
+      padding: 0.4rem;
+    }
+    .container div{
+      background-color: #fff;
+      padding: 0.rem;
+    }
+    .container .header{
+      grid-area: header;
+      text-align: center;
+    }
+    .container .menu{
+      grid-area: menu;
+    }
+    .container .content{
+      grid-area: content;
+    }
+    .container .footer{
+      grid-area: footer;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>MY HEADER</h2>      
+    </div>
+    <div class="menu"><a href="">Link 1</a><br><a href="">Link 2</a><br><a href="">Link 3</a></div>
+    <div class="content">
+      <h3>Lorem, ipsum.</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid quod reprehenderit autem, quaerat velit veniam debitis et, consequuntur possimus placeat animi cum odit fugit magni illum ullam cumque beatae officia!</p>
+    </div>
+    <div class="footer">
+      <h4>FOOTER</h4>
+    </div>
+  </div>
+</body>
+</html>
