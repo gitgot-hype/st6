@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>grid </title>
+  <link rel="stylesheet" href="/reset.css">
+  <!-- grid
+  1. container 에게 grid 선언  container
+  2. 행열 줄칸갯수, 크기 결정  container
+  3. 암시적 그리드선언(생략가능)  container
+  4. 아이템배치  item
+  -->
+  <style>
+    .wrap{
+      margin: 50px;
+    }
+    /* 모양 */
+    .grid-container{
+      background-color: magenta;
+    }
+    .grid-container .item{
+      opacity: 0.5;
+      box-sizing: border-box;
+      background-color: dodgerblue;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+    /* grid */
+    .grid-container{
+      display: grid;
+      /* 2 줄칸 크기 설정 */
+      /* 2줄 row */
+      grid-template-rows: 100px 200px;
+      grid-template-rows: 100px 100px;
+      grid-template-rows: repeat(2, 100px);
+      grid-template-columns: repeat(4, 100px);
+      /* grid-template-columns: 100px 200px 100px 200px;
+      grid-template-columns: repeat(2, 100px 200px);
+      grid-template-columns: 20px 50px 50px 50px 50px 50px 50px 20px;
+      grid-template-columns: 20kpx repeat(6, 20px) 20px;
+       */
+      
+       /* fr fraction 부모의 남은 공간을 나눌 단위 */
+       /* 12컬럼 그리드 시스템  -> 1fr */
+      /* 12컬럼 그리드에서 3컬럼을 사용해서 4단 */
+      grid-template-columns: repeat(4, 3fr);
+      
+      grid-template-columns: 1fr 4fr 1fr;
+      grid-template-columns: 100px 1fr 150px;
+      grid-template-columns: 20% 50% 30%;
+      grid-template-columns: 20% minmax(500px, 50%) 30%;
+   
+    }
+    /* grid item */
+    .grid-container .item{
+
+    }
+    .grid-container .item:nth-child(1){
+    }
+    .grid-container .item:nth-child(2){
+    }
+    .grid-container .item:nth-child(3){
+    }
+    .grid-container .item:nth-child(4){
+    }
+    .grid-container .item:nth-child(5){
+    }
+    .grid-container .item:nth-child(6){
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="grid-container">
+    <div class="item">아이템1</div>
+    <div class="item">아이템2</div>
+    <div class="item">아이템3</div>
+    <div class="item">아이템4</div>
+    <div class="item">아이템5</div>
+    <div class="item">아이템6</div>
+    <div class="item">아이템7</div>
+    <div class="item">아이템8</div>
+    </div>
+  </div>
+</body>
+</html>

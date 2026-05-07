@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex에서 margin의 활용</title>
+  <link rel="stylesheet" href="/reset.css">
+  <style>
+    .container{
+      background-color: #ccc;
+      width: 100%; height: 100vh;
+      
+      display: flex;
+      /* 2row  5nowrap 6gap*/
+      /* 7 정렬
+      */
+      justify-content:flex-start;
+      /* align-items: stretch;   이거땜에 아이템이 길게 늘어남
+      교차크기( 아이템의 width, height) : auto; */
+    }
+    .item{
+      /* width: 100px;height: 100px; */
+      background-color: magenta;
+      /* 3 확장0 축소1 */
+      /* 4 크기지정 flex-basis:atuo; */
+      /* flex item일때 나의 내용크기만큼 되겠다.  width: auto; */
+      width: 100px; 
+      /* flex item이 stretch 일 경우 부모이 크기만큼 늘어나라, 이 경우를 제외하곤느 내 내용 크기가 기본값  height: auto; */
+      height: 100px;
+      
+      /* 6 margin */
+      /* margin-top: auto; */
+      margin: auto;
+      /* flex container 의 남은 공간을 바깥여백으로 사용  */
+
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">아이템</div>
+    <div class="item">아이템2</div>
+  </div>
+</body>
+</html>
