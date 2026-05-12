@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>grid </title>
+  <title>grid3- 정렬 배치 </title>
   <link rel="stylesheet" href="/reset.css">
   <!-- grid
   1. container 에게 grid 선언  container
   2. 행열 줄칸갯수, 크기 결정  container
   3. 암시적 그리드선언(생략가능)  container
-  4. 아이템배치  item
+  4. 아이템배치  item (생략 한줄 한칸)
+  5. 여백
+  6. 정렬
   -->
   <style>
     .wrap{
@@ -18,27 +20,47 @@
     /* 모양 */
     .grid-container{
       background-color: #ccc;
+      min-height: 500px;
     }
     .grid-container .item{
       background-color: dodgerblue;
+      box-sizing: border-box;
+      border: 1px solid magenta;
     }
     /* grid */
     .grid-container{
       display: grid;
-      gap:10px;
-      grid-template-rows: repeat(3, minmax(100px, auto));
-      grid-template-columns: repeat(3, 1fr);
-      
+      /* 2 */
+      /* grid-template-rows: repeat(3, 100px); */
+      grid-template-columns: repeat(3, 30%);
+      /* 4. 정렬/배치  : 컨테이너 안에서 아이템 정렬/배치*/
+      /* 수평 정렬/배치  start center end space-between.... */
+      justify-content: start;
+      justify-content: space-around;
+      justify-content: space-evenly;
+      justify-content: space-between;
+      /* 정렬/배치 기본값 : */
+      justify-content: normal;
+      /* block축의 크기를 지정하지 dksgdmaus stretch */
+      align-content: normal;
+      /* align-content: center; */
+      /* block축의 크기를 지정하면 start */
+      grid-template-rows: repeat(3, 100px);
+      /* s-b s-a s-e */
+      align-content: end;
+      /* 3. 여백 gap(container)  marign(item)
+        justigy-. align- 값이 between-* 으로 설정시 무시됨)
+      */
+      /*  -items  그리드영역안에서 정렬 */
+      justify-items: center; */
+      align-items: center;
     }
     /* grid item */
     .grid-container .item{
-
     }
     .grid-container .item:nth-child(1){
-      /* grid-column-start: 1;
-      grid-column-end: 3; */
-      grid-column: 1/3;
-      /* grid-column: 1/span 2; */
+      justify-self: start;
+      align-self: srart;
     }
     .grid-container .item:nth-child(2){
     }
@@ -60,7 +82,7 @@
     <div class="item">아이템2</div>
     <div class="item">아이템3</div>
     <div class="item">아이템4</div>
-    <div class="item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure voluptatibus dolorem tempora quisquam eius dolore placeat blanditiis nostrum, repellat, numquam soluta ut voluptatem explicabo eligendi delectus cupiditate dolorum voluptas hic aspernatur! Fuga alias recusandae molestias tenetur deserunt cumque, autem quisquam tempore facilis sunt distinctio accusamus neque ipsa dolore exercitationem nostrum?</div>
+    <div class="item">아이템5</div>
     <div class="item">아이템6</div>
     <div class="item">아이템7</div>
     <div class="item">아이템8</div>
