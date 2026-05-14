@@ -1,167 +1,167 @@
 
-    /* 
-    1 .swiper-slide 수평으로 나란하게
-     문제
-      1. 2~ 이후 슬라이드 보이지 않음
-      2. .swiper-slide 이미지가 슬라이드로 다 보여짐
-    2. 1번 슬라이들가 브라우저 왼족:0가 아니라 기존스킨의 너비에 맞춰서 시작햇으면
-      1. swiper : 브라우저 다 사용
-      2. 슬라이드 진행 : 기존의 스킨의 너비만큼만 
-    3 swiper view 3개 slide로 표시  3단 으로 표현하고 싶어요
-    4. swiper-slide 후손인 img가 슬라이드의 너비를 따르지 않아요
-       swiper-slide > a,  swiper-slide>a>img 가 inline 박스
-    5. swiper-slide 사이에 여백 간격 주기 
-       문제 swiper 에서는 아이템간의 여백을 margin-right로 지정
-    6. 수평스크롤 바를 없애야 해요.
-    7. pagination type: 'progressbar' 변경
-    8. 프로그레스바의 위치를 swiper아래로 이동
-       1 동일요소에 top설정이 되어 있어 자리를 bottom 설정
-       2. bottom -값 설정시 .swiper 영역밖으로 나갈 경우 사라지는 현상발생
-          .visual-section이 overflow:hidden을 유지하면 progressbar를 표시
-       3 next, prev, play 버튼만큼 progressbar의 크기를 줄여야해요
-    9. next, prev, play 단추들을 progressbar 오른쪽에 위치
-       1.  swiper-button-next, prev 버튼이 개별요소로 되어 있어, swiper-wrapper의 자식으로 되어 있어 개별 이동을 해야해요
-       2.  swiper-button-next, prev 버튼 개별 position:absolute 없애고 자리 매치
-       */
-      /* ↓ 슬리아드 위치를 확인 */
-    .visual-section .swiper-slide {
-      position: relative;/* swiper 이미설정되어 있음*/
-    }
-    .visual-section .swiper-slide span {
-      position: absolute;
-      left: 0; top: 0;
-      background-color: #fff;
-    }  
-      /* ↑ 슬라이드의 위치를 확인 테스트 삭제 */
+      /* 
+    1. .swiper-slide 수평으로 나란하게
+    문제
+      1슬라이드 나머지 보이지
+      2. .swiper-slide
+    2. 1번슬라이드가 브라우저 왼쪽:0가 아니라 기존스킨의 너비에 맞춰서 시작했으면
+      문제 1. swiper 브라우저 다 사용
+      문제 2. 슬라이드 진행 기존스킨의 너비만큼만
+    3. swiper view 3개 slide가 표시되게하고(3단)
+    4. swiper-slide 후손인 img가 swiper-slide의 너비를 따르지 않아
+       문제 1swiper-slide>a,        swiper-slide>a>img  inline
+    5. swiper-slide 사이에 여백
+       문제 swiper에서는 아이템간 여백을 marin-right로 지정
+   6. 수평스크롤 바를 없애야해
+   7. 페이지네이션의 type:'progressbar' 변경
+   8. 프로그레스바이 위치를 swiper아래로 이동
+      문제1 동일요소에 top 설정되어 있어서 자리를 bottom
+      문제2  bottom -값 .swiper 영역밖으로 나갈경우 사라지는 문제
+             .visual-section이 oveflow:hidden을 유지하면 progressbar를 표시
+      문제3 next,prev, play 버튼만큼 progressbar의 크기를 줄여해요
+  9. next, prev 단추를 progressbar 오른쪽에 오게할거예요
+     문제1.  swiper-button-prev, swiper-button-next 버튼 .swiper-wrapper 자식으로 되어 있어서 개별 이동을 해야해요
+     문제2.   swiper-button-prev, swiper-button-next 버튼 개별 position:absolute 없애고 자리매치
+  */
+      /*  ↓슬라이드의 위치를 확인 */
+      .visual-section .swiper-slide {
+        position: relative; /*swiper 이미설정*/
+      }
+      .visual-section .swiper-slide span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: #fff;
+      }
+      /* ↑슬라이드의 위치를 확인 테스트 삭제  */
 
-    .visual-section {
-      /* visual-seciton 과 후손에서 사용될 변수 선언 */
-      --swiper-control-position-bottom: -40px;
-      /* 2-1의 문제 해결 */
-      width: 100% !important;
-      max-width: 100% !important;
-      /* 6  swiper의 overflow:visible; 변경한 후 컨테이너(바로 아래)의 넘처나는건 hidden */
-      overflow: hidden;
-      /* 8번 문제2 해결   자식높이(swiper)+100px 높고 싶어. */
-      padding-bottom: 80px;
-    }
-    .visual-section .swiper {
-      /* 1-문제1 해결 */
+      .visual-section {
+        /* .visual-section 과 후손에서 사용될 변수선언 */
+        --swiper-control-positon-bottom:-40px;
+        /* 2번 문제1 */
+        width: 100% !important;
+        max-width: 100% !important;
+        /* 6 
+        68줄의 overflow:visible;  변경한 후 
+        */
+        overflow: hidden;
+        /* 8 문제2  자식높이(swiper)+100px*/
+        padding-bottom:80px;
+
+      }
+      .visual-section .swiper {
+        /* 1-문제1 해결 */
         overflow: visible;
         /* 2- 문제2 해결 */
         max-width: 1420px;
         width: 92%;
-        /* cafe 24에 맞춤 */
+        /* cafe24 swiper 버전 */
         position: relative;
-        margin-left: auto;
-        margin-right: auto;
-    }  
-    .visual-section .swiper-wrapper{
-      /* 5 해결헤 swpier 작동을 위해서는 gqp지정하지 말고  JS에서 spaceBtween속성 지정*/
-      /* gap: 20px; */
-    }
-    .visual-section .swiper-slide{
-      /* 문제2 해결 */
-      /* width: auto; /
-      /* 3-1 해결 */
-      /* swiper 사용하시면 js에서 slidesPerview에서 지정 */
-      /* width: 33.3%; */
-    }
-  .visual-section .swiper-slide > a{
-    /* 4 */
-    display:block;
-  }
-  .visual-section .swiper-slide > a > img{
-    /* 4 */
-    display:block;
-    width: 100%;
-  }
-  .visual-section .swiper-pagination-progressbar {
-        /* height: var(--swiper-pagination-progressbar-size, 4px); */
-        left: 0;
-        top: 0;
+        margin-left: auto; margin-right: auto;
+      }
+      .visual-section .swiper-wrapper {
+        /* 5 swiper 작동을 위해서는 gap을 지정하지 마시고 spaceBetween 속성을 지정*/
+        /* gap:20px; */
+      }
+
+      .visual-section .swiper-slide {
+        /* 1-문제2 해결 */
+        /* width:auto; */
+        /* 3 */
+        /* 3. swiper 사용하시면 slidesPerView를 이용하세요 */
+        /* width: 33.33%; */
+      }
+
+      .visual-section .swiper-slide > a {
+        /* 4 */
+        display: block;
+      }
+      .visual-section .swiper-slide > a > img {
+        /* 4 */
+        display: block;
         width: 100%;
-        /* 8 progressbar를 swiper 아래로 이동 */
-        bottom: var(--swiper-control-position-bottom);
-        /*8 기존의 top값이 있다면 무력화시키기위해 */
-        top: auto; /*top값을 무력화 시기기위해. bottom값을 줄때 top값은 없어야하기 대문*/
-        width: calc(100% - 124px);
-        transform: translate(o, 50%);
-  }
-  .visual-section .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+      }
+      /* prgressbar  */
+      .visual-section .swiper-pagination-progressbar{
+        /* 8  프로그레스바이 위치를 swiper아래로 이동*/
+        bottom:var(--swiper-control-positon-bottom);
+        /* 8 문제1 기존이 top값이 있다면 무력화시키기위해 */
+        top:auto;
+        width: calc(100% - 120px);
+      } 
+     .visual-section .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
       background-color: #000;
-    }
-  .visual-section .swiper-button{
-    /* 9-2  */
-    position: absolute;
-    right: 0px;
-    bottom: var(--swiper-control-position-bottom);
-    /* 자기 y축 크기의 반만큼 아래로 */
-    transform: translate(0, 50%);
-  }
-  .visual-section .swiper-button>div{
-    /* 문제 9-2 */
-    /* position: absolute 무력화, 좌우상하의 값을 무력화시키고 싶어요 */
-    position: static;
-    /* 수평으로 오면서 너비 높이를 지정하고 싶어, 나란히 오게 하고 싶어요. inB(본인) float(본인) flex/grid(본인)*/
-    display: inline-block;
-    width: 24px; height: 24px;
-    position: relative;
-    left: auto; right: auto; top: auto; bottom: auto;
+     }
 
-  }
-  .visual-section .swiper-button .swiper-button-prev,
-  .visual-section .swiper-button .swiper-button-next{
-    /* width: 24px; height: 24px; */
-    padding-left: 10px;
-    padding-right: 10px;
-    background-image: none;
-  }
-  .visual-section .swiper-button .swiper-button-prev::after{
-    content: "";
-    display: block;
-    width: 2px; height: 60%;
-    background-color: #ccc;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translate(0, -50%);
-  }
-  .visual-section .swiper-button .swiper-button-prev > img,
-  .visual-section .swiper-button .swiper-button-next > img{
-    width: 100%;
-    display: block;
-  }
-  /* .visual-section .swiper-button .swiper-button-next > img 를 180 회전 */
-  .visual-section .swiper-button .swiper-button-next > img{
-    transform: rotate(180deg);
-  }
-  
-  .visual-section .swiper-button .swiper-button-play-toggle{}
-  .visual-section .swiper-button .swiper-button-play-toggle > span{
-    display: block;
-    padding-left: 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    overflow: hidden;
-  }
-  .visual-section .swiper-button .swiper-button-play-toggle .icon-pause{
-    background-image: url(/myfolder/images/pause_48dp.png);
-  }
-  .visual-section .swiper-button .swiper-button-play-toggle .icon-play{
-    background-image: url(/myfolder/images/play_arrow_48dp.png);
-  }
-  /* 
-  .swiper-button-play-toggle .is-play 
-  .swiper-button-play-toggle .is-pause 
-   */
-  /* .visual-section .swiper-button .swiper-button-play-toggle .is-pause .icon-pause,
-  .visual-section .swiper-button .swiper-button-play-toggle  .is-play .icon-play{
-    display: none;    
-  } */
+      .visual-section .swiper-button{
+        /* 9 문제2 */
+        position: absolute;
+        right: 0px;
+        bottom:var(--swiper-control-positon-bottom);
+        /* 자기 y축크기의 반만큼 아래로 */
+        transform: translate(0,100%);
+      }
+      .visual-section .swiper-button>div{
+        /* 9 문제2*/
+        /* positon:absolute 무력화 */
+        position: static;
+        /* 수평으로 오면서 너비 높이를 지정하고 싶어 */
+        display: inline-block;
+        width:24px; height: 24px;
+        position: relative;
+        left: auto; right: auto; bottom: auto;
+      }
+      .visual-section .swiper-button .swiper-button-prev,
+      .visual-section .swiper-button .swiper-button-next{
+        /* width:24px; height: 24px; */
+        padding-left:10px;
+        padding-right: 10px;
+        background-image: none;
+      }
+      .visual-section .swiper-button .swiper-button-prev::after{
+        content: "";
+        display: block;
+        width: 2px;
+        height: 60%;
+        background: #ccc;
+        position: absolute;
+        right: 0;
+        top:50%;
+        transform: translate(0,-50%);
+      }
+       .visual-section .swiper-button .swiper-button-prev > img,
+      .visual-section .swiper-button .swiper-button-next >img{
+        width:100%;
+        display: block;
+      }
+      /* .visual-section .swiper-button .swiper-button-prev > img를 180도 회전 */
+      .visual-section .swiper-button .swiper-button-next >img{
+        transform: rotate(180deg);
+      }
 
-.visual-section .swiper-button .swiper-button-play-toggle.is-play .icon-play,
-.visual-section .swiper-button .swiper-button-play-toggle.is-pause .icon-pause {
-  display: none;
-}
-
+   
+      .visual-section .swiper-button .swiper-button-play-toggle{
+      }
+      .visual-section .swiper-button .swiper-button-play-toggle>span{
+        display: block; 
+        padding-left: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        overflow: hidden;
+        transform: translate(0,-70%);
+      }
+      .visual-section .swiper-button .swiper-button-play-toggle .icon-pause{
+        background-image: url(/myfolder/images/pause_48dp.png);
+      }
+      .visual-section .swiper-button .swiper-button-play-toggle .icon-play{
+        background-image: url(/myfolder/images/play_arrow_48dp.png);
+      }
+      /* 
+       .swiper-button .swiper-button-play-toggle .is-play : pause 표시
+       .swiper-button .swiper-button-play-toggle .is-pause : play 표시
+      */
+      .visual-section .swiper-button .swiper-button-play-toggle.is-pause .icon-pause,
+      .visual-section .swiper-button .swiper-button-play-toggle.is-play .icon-play{
+          display: none;
+      }
+    
