@@ -280,12 +280,42 @@
     addIcons:false,
   },
 
+  // Autoplay
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+
   // And if we need scrollbar
   // progresbar 일때 삭제
   //scrollbar: {
   //  el: '.swiper-scrollbar',
   //},
 });
+
+// 재생/정지 토글 버튼 기능
+(function() {
+  const playToggleBtn = document.querySelector('.swiper-button-play-toggle');
+  
+  if (!playToggleBtn) return;
+
+  // 클릭 이벤트 리스너
+  playToggleBtn.addEventListener('click', function() {
+    const isPlay = playToggleBtn.classList.contains('is-play');
+    
+    if (isPlay) {
+      // 현재 재생 중 → 정지 상태로 변경
+      playToggleBtn.classList.remove('is-play');
+      playToggleBtn.classList.add('is-pause');
+      swiper1.autoplay.stop();
+    } else {
+      // 현재 정지 중 → 재생 상태로 변경
+      playToggleBtn.classList.remove('is-pause');
+      playToggleBtn.classList.add('is-play');
+      swiper1.autoplay.start();
+    }
+  });
+})();
 </script> 
 </body>
 </html>
