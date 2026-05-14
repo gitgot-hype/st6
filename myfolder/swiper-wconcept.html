@@ -266,6 +266,12 @@
   // swiper에서는 아이템간 여백을 marin-right로 지정
   spaceBetween: 20,
 
+  // Autoplay settings
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
@@ -287,7 +293,29 @@
   // scrollbar: {
   //   el: '.swiper-scrollbar',
   // },
-});
+  });
+
+  // 재생/정지 토글 기능
+  const playToggleButton = document.querySelector('.swiper-button-play-toggle');
+
+  if (playToggleButton) {
+    playToggleButton.addEventListener('click', () => {
+      // 현재 상태 확인: is-pause 클래스 존재 여부
+      if (playToggleButton.classList.contains('is-pause')) {
+        // 슬라이더 일시정지
+        swiper1.autoplay.stop();
+        // 버튼 상태 업데이트: is-pause 제거, is-play 추가
+        playToggleButton.classList.remove('is-pause');
+        playToggleButton.classList.add('is-play');
+      } else {
+        // 슬라이더 재생
+        swiper1.autoplay.start();
+        // 버튼 상태 업데이트: is-play 제거, is-pause 추가
+        playToggleButton.classList.remove('is-play');
+        playToggleButton.classList.add('is-pause');
+      }
+    });
+  }
 </script>
   </body>
 </html>
