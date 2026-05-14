@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>swiper페이지네이션-fraction</title>
-  <!-- swiper css 스크립트 -->
+  <title>swiper연습4-프로그레스바.html</title>
+  <!-- swiper css  -->
   <link rel="stylesheet" href="/reset.css">
   <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
   <!-- swiperjs 스크립트 -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <style>
-  .swiper {
-  width: 80%;
-  height: 50vh;
-  }
+    .swiper {
+      width: 80%;/* 해당 영역에 맞게 크기를 지정*/
+      height: 50vh;
+    }
   </style>
 </head>
 <body>
-  <!-- Slider main container -->
+<!-- Slider main container -->
 <div class="swiper swiper1">
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
@@ -34,9 +34,10 @@
   <div class="swiper-button-next"></div>
 
   <!-- If we need scrollbar -->
-  <div class="swiper-scrollbar"></div>
+   <!-- 만약 pagination을 progress바로 할경우 html에서도 삭제 해야함. -->
+  <!-- <div class="swiper-scrollbar"></div> -->
 </div>
-
+<!-- swiper를 실행. 초기화 -->
 <script>
   const swiper1 = new Swiper('.swiper1', {
   // Optional parameters
@@ -44,21 +45,23 @@
   loop: true,
 
   // If we need pagination
-
   pagination: {
-    el: ".swiper-pagination",
-    type: "fraction",
+    el: '.swiper-pagination',
+    type: 'progressbar',
+    clickable: true,
   },
+
   // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
+    
   },
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+  // And if we need scrollbar.  progress 바 이용시 삭제하면
+  //scrollbar: {
+  //  el: '.swiper-scrollbar',
+  //},
 });
 </script>
 </body>
