@@ -7,10 +7,10 @@
 
 /*단배너 css */
 /* 단배너 콩통 */
-.dan1> .itme{width: 100%;}
-.dan2> .itme{width: 50%;}
-.dan3> .itme{width: 33.33%;}
-.dan4> .itme{width: 25%;}
+.dan1>.itme{width: 100%;}
+.dan2>.itme{width: 50%;}
+.dan3>.itme{width: 33.33%;}
+.dan4>.itme{width: 25%;}
 .dan-section{}
 .dan-section .dan-container{
   gap: 20px;
@@ -20,6 +20,10 @@
 }
 .dan-section .item{
   flex: none;
+  
+  opacity: 0.5;
+  box-sizing: border-box;
+  border: 1px solid #000;
 }
 .dan-section .item .thumb{}
 .dan-section .item .thumb .img{}
