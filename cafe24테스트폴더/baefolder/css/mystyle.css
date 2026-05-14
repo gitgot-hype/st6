@@ -7,14 +7,14 @@
 
 /*단배너 css */
 /* 단배너 콩통 */
-.dan1>.itme{width: 100%;}
-.dan2>.itme{width: 50%;}
-.dan3>.itme{width: 33.33%;}
-.dan4>.itme{width: 25%;}
+.dan1>.item{width: 100%;}
+.dan2>.item{width: 50%;}
+.dan3>.item{width: 33.33%;}
+.dan4>.item{width: 25%;}
 .dan-section{}
 .dan-section .dan-container{
   gap: 20px;
-  background-color: #f00;
+  /* background-color: #f00; */
   box-sizing: border-box;
   border: 1px solid #00f;
 }
