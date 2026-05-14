@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>swiper페이지네이션-fraction</title>
-  <!-- swiper css 스크립트 -->
+  <title>swiper연습3- 네비게이션아이콘바꾸기</title>
+  <!-- swiper css  -->
   <link rel="stylesheet" href="/reset.css">
   <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
   <!-- swiperjs 스크립트 -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <style>
-  .swiper {
-  width: 80%;
-  height: 50vh;
-  }
+    .swiper {
+      width: 80%;/* 해당 영역에 맞게 크기를 지정*/
+      height: 50vh;
+    }
   </style>
 </head>
 <body>
-  <!-- Slider main container -->
+<!-- Slider main container -->
 <div class="swiper swiper1">
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
@@ -30,13 +30,17 @@
   <div class="swiper-pagination"></div>
 
   <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev">
+    <img src="/swiper/images/arrow_back_opsz48.png" alt="">
+  </div>
+  <div class="swiper-button-next">
+    <img src="./images/arrow_forward_opsz48.png" alt="">
+  </div>
 
   <!-- If we need scrollbar -->
   <div class="swiper-scrollbar"></div>
 </div>
-
+<!-- swiper를 실행. 초기화 -->
 <script>
   const swiper1 = new Swiper('.swiper1', {
   // Optional parameters
@@ -44,15 +48,17 @@
   loop: true,
 
   // If we need pagination
-
   pagination: {
-    el: ".swiper-pagination",
-    type: "fraction",
+    el: '.swiper-pagination',
+    clickable: true,
   },
+
   // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
+    //내가 이미지를 넣을 떄
+    addIcones:false,
   },
 
   // And if we need scrollbar
